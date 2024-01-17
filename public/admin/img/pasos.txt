@@ -1,0 +1,115 @@
+1. Crear la regla de validación
+2. Colocar el tag del error en el formulario
+3. Cambiar la configuración a es en app.php
+4. Ejecutar el comando para integrar directivas lang con artisan (composer require --dev laravel-lang/common)
+5. Adicionar el lenguaje es (php artisan lang:add es)
+6. Actualizar los lenguajes (php artisan lang:update)
+
+
+=======================================================================
+Fase 0. Crear el proyecto y cambiar el idioma de ejecución
+
+- Crear el proyecto laravel new ProgramPetAdopter
+- Ejecutar el comando para integrar directivas lang con artisan (composer require --dev laravel-lang/common)
+- Adicionar el lenguaje es (php artisan lang:add es)
+- Actualizar los lenguajes (php artisan lang:update)
+
+
+Fase 1. Configuración de páginas web
+
+- Crear el logo de la aplicación
+https://looka.com/  
+https://app.logo.com/
+Inspeccionar, descargar svg
+
+https://pixelied.com/features/svg-editor
+Cambiar a fondo transparente
+
+- Crear la carpeta temp a nivel del proyecto
+  
+- Descargar plantilla para la página public en temp
+https://startbootstrap.com/
+Free
+
+- Descargar plantilla para el sitio web administrativo en temp
+https://adminlte.io/
+
+
+=======================================================================
+
+Fase 2. Copiar css y js de plantillas a public
+
+- Crear la carpeta home y la carpeta admin en public
+
+- Copiar los css y js de la plantilla administrativa a admin
+
+- Copiar los css y js de la plantilla publica a home
+
+========================================================================
+
+Fase 3. Crear las vistas en home
+
+- Crear la carpeta home en resources/views
+
+- Crear la vista index en /home
+
+- Copiar index.html de plantilla temp/public y pegar en la vista index.blade.php 
+
+- Arreglar los enlaces (asset) y quitar los excedentes.
+
+=========================================================================
+
+Fase 4. Crear las rutas de home
+
+- Crear la ruta / que apunta a /home/index.blade.php
+
+- Probar
+
+=========================================================================
+
+Fase 5. Crear las vistas en admin
+
+- Crear la carpeta admin en resources/views
+
+- Crear la vista base en /admin
+
+- Copiar index.html de la plantilla temp/admin y pegar en la vista base.blade.php
+
+- Arreglar los enlaces (asset) y quitar los exedentes. 
+
+- Crear la vista welcome en /admin y extender de base
+
+=========================================================================
+
+Fase 4. Crear las rutas de admin
+
+- Crear la ruta /welcome que apunta a /admin/welcome.blade.php
+
+- Probar
+
+=========================================================================
+
+Fase 5. Crear la base de datos y las migraciones
+
+- Configurar los parametros de la base de datos
+
+- Crear la base de datos en mysql
+
+- Ejecutar las migraciones existentes para la tabla usuarios
+
+- Crear la migración de la tabla categorias
+php artisan make:migration create_categories_table --create=categories
+
+- Ejecutar las migraciones existentes para la tabla categoria
+
+- Crear el primer modelo y el controlador de categorías
+php artisan make:model Category --factory
+
+- Probar con php artisan tinker el modelo
+
+- Ir al factory de categoría y colocar el generador faker para el nombre
+
+- Refrescar las migraciones existentes y generar los datos de prueba
+php artisan migrate:fresh --seed
+
+

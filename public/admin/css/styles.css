@@ -1,0 +1,15 @@
+.brand-logo {
+    padding: 0 !important;
+    text-align: center;
+}
+
+.img-logo {
+    width: 135px !important;
+}
+
+.background-admin {
+    background-image: url("../../img/background01.jpg") !important;
+    background-size: contain !important;
+    width: 100% !important;
+    height: 500px !important;
+}
